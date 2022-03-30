@@ -47,8 +47,8 @@ const Home: NextPage = ({countries}:any) => {
       countries?countries.filter((country:any)=>region!=="All"?country.region === region:country)
       .filter((country:any)=>country.name.common.toLowerCase().includes(search.toLowerCase())).map((country:any)=>(
 
-        <Link href={`/country/${country.name.common}`} key={country.name.common}>
-        <div className={styles.countryItem} >
+        <Link href={`/country/${country.name.common}`}  key={country.name.common}>
+        <div className={styles.countryItem}>
         <img src={country.flags.png} width="220" height="130"/>
         <h1>{country.name.common}</h1>
         <p><span>Population: </span>{country.population.toLocaleString('en-US')}</p>
