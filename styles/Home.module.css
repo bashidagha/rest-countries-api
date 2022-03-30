@@ -2,7 +2,6 @@
   display: flex;
   flex-wrap: wrap;
     justify-content: center;
-
 background-color: #FAFAFA;
 }
 
@@ -10,8 +9,8 @@ background-color: #FAFAFA;
     max-width: 220px;
     background-color: white;
     margin: 1.2rem 2rem;
-
-    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.35);
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.25);
 }
 
 
@@ -36,12 +35,61 @@ font-size: 70% !important;
 .search_box{
 display: flex;
 justify-content:space-between;
-margin: 1.2rem 0;
 padding: 0 6rem;
-width: 100%;
+}
+
+.search_box svg{
+width: 13px;
+height: 13px;
+
 }
 
 .search_box input{
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.15);
     border: none;
+    padding: 10px;
+    padding-left: 30px;
+    font-size: 15px;
+}
+
+.search_box select{
+padding: 10px;
+padding-right: 20px;
+  font-size: 15px;
+}
+.search_box option{
+padding: 10px;
+padding-right: 20px;
+  font-size: 15px;
+}
+
+
+.single_page{
+display: flex;
+justify-content: space-between;
+}
+
+.back_button{
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.15);
+padding: 5px 10px;
+margin-left: 4rem;
+}
+
+
+@media (max-width:576px){
+.search_box{
+flex-direction: column;
+padding: 0;
+align-items: center;
+}
+
+.back_button{
+
+margin-left: 1rem;
+}
+
+.single_page{
+flex-direction: column;
+align-items: center;
+}
 }
