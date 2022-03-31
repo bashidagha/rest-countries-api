@@ -66,13 +66,28 @@ padding-right: 20px;
 
 .single_page{
 display: flex;
-justify-content: space-between;
+justify-content: center;
+}
+
+.single_page p{
+font-size: 70%;
+}
+.single_page span{
+font-size: 80%;
+font-weight: bold;
+}
+
+.single_page img{
+margin-right: 1rem;
+width: 350px;
+height: 270px;
 }
 
 .back_button{
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.15);
 padding: 5px 10px;
 margin-left: 4rem;
+margin-bottom: 1rem;
 }
 
 
@@ -81,6 +96,11 @@ margin-left: 4rem;
 flex-direction: column;
 padding: 0;
 align-items: center;
+}
+
+.single_page img{
+width: 300px;
+height: 220px;
 }
 
 .back_button{
