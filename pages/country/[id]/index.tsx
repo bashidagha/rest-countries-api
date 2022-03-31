@@ -4,7 +4,7 @@ import styles from '../../../styles/Home.module.css'
 import styles1 from '../../../styles/HomeDark.module.css'
 import { useDark } from "../../../context/state";
 
-const country  = ({country}:any) => {
+const Country  = ({country}:any) => {
 
   const { dark, darkPage } = useDark();
 
@@ -84,4 +84,4 @@ export const getStaticPaths = async () => {
 
 };
 
-export default country;
+export default Country;
