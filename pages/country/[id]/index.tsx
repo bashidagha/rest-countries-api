@@ -19,7 +19,7 @@ const country  = ({country}:any) => {
       <h1>{country[0].name.common}</h1>
       <div style={{display:"flex"}}>
       <div>
-      <p><span>Native Name: </span>{country[0].name.nativeName[Object.keys(country[0].name.nativeName)[0]].common}</p>
+      {country[0].name.nativeName?<p><span>Native Name: </span>{country[0].name.nativeName[Object.keys(country[0].name.nativeName)[0]].common}</p>:<p/>}
       <p><span>Population: </span>{country[0].population.toLocaleString('en-US')}</p>
       <p><span>Region: </span>{country[0].region}</p>
       <p><span>Sub Region: </span>{country[0].subregion}</p>
@@ -28,7 +28,7 @@ const country  = ({country}:any) => {
 
       <div>
       <p><span>Top Level Domain: </span>{country[0].tld}</p>
-      <p><span>Currencies: </span>{country[0].currencies[Object.keys(country[0].currencies)[0]].name}</p>
+      {country[0].currencies?<p><span>Currencies: </span>{country[0].currencies[Object.keys(country[0].currencies)[0]].name}</p>:<p/>}
       <p><span>Languages: </span>{country[0].tld}</p>
       </div>
 
@@ -67,7 +67,7 @@ export const getStaticPaths = async () => {
 
   const ids = countries.map((country: any) => country.name.common);
 
-  const paths = ids.map((id: any) => ({ params: { id: id.toString() } }));
+  const paths = ids.map((id: any) => ({ params: { id: id } }));
 
 
   return {
