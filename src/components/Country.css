@@ -1,0 +1,40 @@
+.country-card {
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
+}
+
+.country-flag {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.country-info {
+  padding: 1.5rem;
+  background-color: var(--bg-element);
+}
+
+.country-name {
+  color: var(--text-color);
+  font-size: 1.125rem;
+  font-weight: 800;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.country-info p {
+  color: var(--text-color);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.country-info p:last-child {
+  margin-bottom: 1rem;
+}
+
+.country-info strong {
+  color: var(--text-color);
+  font-weight: 600;
+}
