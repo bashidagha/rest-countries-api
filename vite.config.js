@@ -7,9 +7,27 @@ export default defineConfig({
     plugins: [
         react(),
         VitePWA({
-            registerType: "prompt",
+            registerType: "autoUpdate",
+            injectRegister: "auto",
             devOptions: { enabled: true },
-            workbox: { globPatterns: ["**/*.{js,css,html,ico,png,svg}"] },
+            workbox: {
+                runtimeCaching: [
+                    {
+                        urlPattern: /^https:\/\/flagcdn\.com\/.*$/,
+                        handler: "CacheFirst",
+                        options: {
+                            cacheName: "external-images-cache",
+                            expiration: {
+                                maxEntries: 100, // Store up to 100 images
+                                maxAgeSeconds: 60 * 60 * 24 * 7, // Cache for 7 days
+                            },
+                            cacheableResponse: {
+                                statuses: [0, 200],
+                            },
+                        },
+                    },
+                ],
+            },
             manifest: {
                 name: "Countries List",
                 short_name: "Countries",
