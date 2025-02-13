@@ -7,8 +7,6 @@ export default defineConfig({
     plugins: [
         react(),
         VitePWA({
-            registerType: "autoUpdate",
-            injectRegister: "auto",
             devOptions: { enabled: true },
             workbox: {
                 runtimeCaching: [
@@ -21,6 +19,17 @@ export default defineConfig({
                                 maxEntries: 100, // Store up to 100 images
                                 maxAgeSeconds: 60 * 60 * 24 * 7, // Cache for 7 days
                             },
+                            cacheableResponse: {
+                                statuses: [0, 200],
+                            },
+                        },
+                    },
+                    {
+                        urlPattern:
+                            /^https:\/\/fonts\.googleapis\.com\/css2\?.*$/,
+                        handler: "StaleWhileRevalidate",
+                        options: {
+                            cacheName: "google-fonts-stylesheets",
                             cacheableResponse: {
                                 statuses: [0, 200],
                             },
