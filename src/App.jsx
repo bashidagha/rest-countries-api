@@ -50,7 +50,7 @@ function App() {
     }, [searchQuery, region, countries]);
 
     return (
-        <Router>
+        <Router basename="rest-countries-api">
             <Header />
             <Routes>
                 <Route
